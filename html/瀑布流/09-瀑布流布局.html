@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        div {
+            width: 260px;
+            position: absolute;
+        }
+
+        img {
+            display: inline-block;
+            width: 150px;
+        }
+
+        #wrap {
+            position: relative;
+            width: 100%;
+        }
+
+        .auto-img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<div><img class="auto-img" src="https://upfile2.asqql.com/upfile/hdimg/wmtp/wmtp/2016-1/27/19186sAkacEsSN2.jpg" alt="">
+</div>
+<div><img class="auto-img" src="https://scpic.chinaz.net/files/pic/pic6/pic1281.jpg" alt=""></div>
+<div><img class="auto-img" src="https://scpic.chinaz.net/files/pic/pic9/202009/apic27858.jpg" alt=""></div>
+<div><img class="auto-img" src="https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg" alt=""></div>
+<div><img class="auto-img" src="https://www.keaidian.com/uploads/allimg/190424/24110307_20.jpg" alt=""></div>
+<div><img class="auto-img" src="https://upfile2.asqql.com/upfile/hdimg/wmtp/wmtp/2016-1/27/19186sAkacEsSN2.jpg" alt="">
+</div>
+<div><img class="auto-img" src="https://scpic.chinaz.net/files/pic/pic6/pic1281.jpg" alt=""></div>
+<div><img class="auto-img" src="https://scpic.chinaz.net/files/pic/pic9/202009/apic27858.jpg" alt=""></div>
+<div><img class="auto-img" src="https://www.keaidian.com/uploads/allimg/190424/24110307_8.jpg" alt=""></div>
+<div><img class="auto-img"
+        src="./images/src=http___p8.itc.cn_images01_20210215_1d512442dac04a19ac99c8a2724eaf2e.jpeg&refer=http___p8.itc.png"
+        alt=""></div>
+<div><img class="auto-img"
+        src="./images/src=http___img.zcool.cn_community_01d9d65a5dab6da80120121f3fd4c2.png@2o.png&refer=http___img.zcool.png"
+        alt=""></div>
+<div><img class="auto-img"
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg9.51tietu.net%2Fpic%2F2019-090821%2Fmb0vbesbfwlmb0vbesbfwl.jpg&refer=http%3A%2F%2Fimg9.51tietu.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664626104&t=fbdb091d2f8edf970f0f82e36740e6a7"
+        alt=""></div>
+<div><img class="auto-img"
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01c1b75541b2cd000001a64bb14a39.jpg&refer=http%3A%2F%2Fimg.zcool.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664626263&t=dd9e0b72ceb3a0bf92f977ef8a7477bc"
+        alt=""></div>
+<div><img class="auto-img"
+        src="https://img1.baidu.com/it/u=1820874315,1595853863&fm=253&fmt=auto&app=138&f=JPEG?w=1194&h=500" alt="">
+</div>
+<div><img class="auto-img"
+        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimage.diyiyou.com%2Fgame%2F202101%2F13%2F1610504609_0.png&refer=http%3A%2F%2Fimage.diyiyou.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664626445&t=1b0c2676cb1a36766a9df4b59919947b"
+        alt=""></div>
+<div><img class="auto-img"
+        src=" https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F01%2F210924133I2Fc-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1664626445&t=cdcb4e243bd0c18db5f33d7fc6445d48"
+        alt=""></div>
+
+</body>
+<script src="./js/data.js"></script>
+<script src="./js/jquery-3.6.0.js"></script>
+<script>
+    var div = document.getElementsByTagName("div");
+    //因为图片较多，在加载时，就加载图片
+    window.onload = function () {
+        Full();
+    }
+    //当窗口大小改变时，重新分列并排序
+    window.onresize = function () {
+        Full();
+    }
+    //函数
+    function Full() {
+        //求分几列
+        var pw = document.documentElement.offsetWidth; //页面宽度
+        // console.log('pw ==>', pw);
+        var dw = div[0].offsetWidth; //每个div宽度
+        console.log('dw ==>', dw);
+        var cols = Math.floor(pw / dw);
+        //缝隙数等于列数加1，例如6行有7个缝隙
+        // console.log('cols ==>', cols);
+        var white = (pw - dw * cols) / (cols + 1);
+        // console.log('white ==>', white);
+        //每一列定位
+        var t = 5;
+        var arr = [];
+        for (var i = 0; i < cols; i++) {
+            var pos = {
+                //计算每个div的坐标(开始让每个top取一个固定值)
+                //横坐标每次不变，只有top变
+                /* 
+                 div[0]   left: white
+                 div[1]   left: white*2 + dw
+                 div[2]   left: white*3 + dw*2
+                 */
+                x: Math.floor((i + 1) * white + dw * i),
+                y: t
+            }
+            arr.push(pos); //将坐标存入数组  
+        }
+        console.log(arr);
+        //每次找高度最小的一列
+        for (var j = 0; j < div.length; j++) {
+            var index = getMinTop(arr);
+            div[j].style.left = arr[index].x + "px";
+            div[j].style.top = arr[index].y + "px";
+            arr[index].y += div[j].offsetHeight + t;
+            console.log("arr[index]", arr[index]);
+        }
+    }
+    //求每次最小高度的列
+    function getMinTop(arr) {
+        var minT = arr[0].y;
+        var index = 0;
+        for (var k = 0; k < arr.length; k++) {
+            if (arr[k].y < minT) {
+                minT = arr[k].y;
+                index = k;
+            }
+        }
+        return index;
+    }
+</script>
+
+</html>

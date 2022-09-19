@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #ddd;
+        }
+
+        .fl {
+            float: left;
+        }
+
+        .fr {
+            float: right;
+        }
+
+        .fl-not::after {
+            clear: both;
+            display: block;
+            content: '';
+        }
+
+        input {
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
+
+        .box {
+            width: 980px;
+            background-image: url(./images/背景图片.jpg);
+            background-size: cover;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .head {
+            width: 100%;
+            height: 80px;
+        }
+
+        .headname {
+            float: left;
+            width: 150px;
+            height: 50px;
+            font-size: 35px;
+            margin: 25px 0 0 60px;
+            color: #bce2f0;
+        }
+
+        .head-inp {
+            position: absolute;
+            float: left;
+            width: 200px;
+            height: 32px;
+            margin: 31px 0 0 216px;
+            border: 3px solid white;
+        }
+
+        .img-he {
+            margin-top: 5px;
+            float: left;
+            width: 25px;
+            height: 25px;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #ffffff;
+        }
+
+
+
+        .inpt-he {
+            float: left;
+            color: white;
+        }
+
+        .inpt-head {
+            margin: 10px 0 0 40px;
+        }
+
+        .head-ri {
+            float: left;
+            width: 250px;
+            height: 30px;
+            margin: 39px 0 0 452px;
+        }
+
+
+
+        .date {
+            width: 120px;
+            height: 30px;
+            font-size: 20px;
+            color: #b0cadc;
+        }
+
+        .week {
+            font-size: 20px;
+            color: #e3d6b7;
+        }
+
+        
+
+        .main-left {
+            width: 662px;
+            height: 230px;
+            position: relative;
+        }
+
+        .le-images {
+            width: 300px;
+            height: 100px;
+            left: 0;
+            right: 0;
+            margin: 50px auto;
+            position: absolute;
+        }
+
+        .main-img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .main-img>img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .temperature{
+            width: 80px;
+            height: 50px;
+            font-size: 35px;
+            font-weight: 600;
+            color: #93dfe3;
+        }
+
+        .Weather-temperature {
+            width: 200px;
+            height: 25px;
+            font-size: 20px;
+            color: #8c5596;
+        }
+
+        .information {
+            width: 305px;
+            height: 150px;
+        }
+
+        .te-one {
+            width: 100%;
+            height: 30px;
+        }
+
+        .text-color {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: white;
+        }
+
+        .one-text {
+            width: 80px;
+            height: 30px;
+            color: #858a8d;
+        }
+
+        .foother {
+            height: 200px;
+            padding: 0 55px;
+        }
+
+        .Weather {
+            width: 100%;
+            height: 100%;
+        }
+
+        .Weather-data {
+            float: left;
+            width: 14.1%;
+            height: 200px;
+        }
+
+        .Weather-picture {
+            position: relative;
+            width: 100%;
+            height: 50%;
+        }
+
+        .imgs {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            left: 0;
+            right: 0;
+            margin: 10px auto;
+        }
+
+        .Weather-text {
+            width: 98%;
+            height: 37%;
+        }
+
+        .text-fon {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .text-fot {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="head-inp">
+            <div class="inpt-head">
+                <input type="text" class="inpt-he" placeholder="输入搜索城市名称">
+            </div>
+        </div>
+
+
+        <div class="box1">
+          
+        </div>
+
+    </div>
+
+    </div>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="./js/index.js">
+        
+
+    </script>
+</body>
+
+</html>
